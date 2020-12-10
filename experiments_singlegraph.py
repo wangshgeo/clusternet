@@ -54,6 +54,11 @@ parser.add_argument('--num_cluster_iter', type=int, default=1,
 
 args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
+print(args.cuda)
+
+if torch.cuda.is_available():
+  args.cuda = True# args.no_cuda and torch.cuda.is_available()
+print(args.cuda)
 
 np.random.seed(args.seed)
 torch.manual_seed(args.seed)
